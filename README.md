@@ -1,7 +1,7 @@
-```md
+
 # Trello Clone
 
-A **React**-based Kanban board application inspired by Trello, leveraging **Firebase** (Authentication, Firestore, Storage) for seamless data management and a fully serverless architecture. This project provides essential Trello-like features—boards, lists, and cards with drag-and-drop functionality—to help teams and individuals organize tasks efficiently.
+A **Java**-based Trello-like application providing backend services for creating boards, lists, and cards, with a **MongoDB** database for data persistence. Designed to be run from **IntelliJ** or any other Java IDE, this project offers essential Kanban functionality without a dedicated frontend.
 
 ---
 
@@ -11,43 +11,34 @@ A **React**-based Kanban board application inspired by Trello, leveraging **Fire
 3. [Tech Stack](#tech-stack)
 4. [Setup & Installation](#setup--installation)
 5. [Usage](#usage)
-6. [Project Structure](#project-structure)
-7. [Contributing](#contributing)
-8. [Contact](#contact)
+6. [Contributing](#contributing)
+7. [Contact](#contact)
 
 ---
 
 ## Overview
-This Trello Clone allows users to create multiple boards, add lists within each board, and populate them with task cards. Thanks to **React** for the frontend and **Firebase** for backend services, the application updates in real time without additional server-side code.
+This Trello Clone backend manages:
+- **Boards**: logical containers for projects or workflows.
+- **Lists**: categories or stages within each board.
+- **Cards**: tasks or items placed in lists, which can be created, updated, or deleted.
+
+Users can integrate this backend with any frontend of choice (e.g., a web or mobile client) by making requests to the appropriate endpoints.
 
 ---
 
 ## Features
-- **User Authentication**: Secure login/signup using Firebase Authentication.
-- **Boards & Lists**: Create and manage boards containing multiple lists.
-- **Cards**: Add, edit, and remove task cards under each list.
-- **Drag-and-Drop**: Reorder lists and cards intuitively.
-- **Real-Time Updates**: Firebase Firestore ensures immediate synchronization across sessions.
-- **Responsive Design**: Works smoothly on various screen sizes.
+- **CRUD Operations**: Create, read, update, and delete boards, lists, and cards.
+- **MongoDB Integration**: Store and retrieve board data from a MongoDB instance.
+- **Scalable Architecture**: Easily extend functionality (e.g., user authentication) without rewriting core logic.
+- **No UI Included**: Designed for use with external clients, such as Postman or custom frontends.
 
 ---
 
 ## Tech Stack
-- **Frontend**  
-  - React (Create React App)  
-  - React Router DOM (for routing)  
-  - React Icons (for icons)
-
-- **Backend (Serverless)**  
-  - Firebase Authentication (secure user auth)  
-  - Firebase Firestore (cloud database)  
-  - Firebase Storage (file/image storage, if applicable)
-
-- **Languages & Tools**  
-  - JavaScript (ES6+)  
-  - HTML5, CSS3  
-
-*(No additional backend or server framework is used—Firebase handles server-side logic.)*
+- **Language**: Java
+- **Database**: MongoDB
+- **IDE**: IntelliJ (recommended for building and running)
+- **Build Tool**: Maven or Gradle (depending on your project configuration)
 
 ---
 
@@ -57,75 +48,28 @@ This Trello Clone allows users to create multiple boards, add lists within each 
    ```bash
    git clone https://github.com/rahulpudurkar/Trello-Clone.git
    ```
-2. **Navigate** to the project folder:
-   ```bash
-   cd Trello-Clone
-   ```
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-   or
-   ```bash
-   yarn
-   ```
-4. **Configure Firebase**:
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
-   - Add a web app to obtain the Firebase configuration (apiKey, authDomain, etc.).
-   - In the project’s `src/firebase.js`, replace the placeholder config values with your Firebase project’s details.
+2. **Open** the project in **IntelliJ** (or your preferred Java IDE).
+3. **Configure MongoDB**:
+   - Ensure you have MongoDB installed and running locally, or update the connection string in the application’s configuration to point to a remote instance.
+4. **Build** the project:
+   - If using **Maven**, run `mvn clean install`.
+   - If using **Gradle**, run `gradle build`.
 
 ---
 
 ## Usage
 
-1. **Run the development server**:
-   ```bash
-   npm start
-   ```
-   or
-   ```bash
-   yarn start
-   ```
-
-2. **Open** your browser:
-   ```
-   http://localhost:3000
-   ```
-3. **Create an account** or **log in** (Firebase Authentication).
-4. **Create boards, lists, and cards** to manage tasks.
-5. **Drag and drop** cards or lists to reorganize tasks in real time.
-
----
-
-## Project Structure
-
-```bash
-Trello-Clone/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Board.js
-│   │   ├── List.js
-│   │   └── Card.js
-│   ├── firebase.js
-│   ├── App.js
-│   ├── index.js
-│   └── ...
-├── package.json
-├── README.md
-└── ...
-```
-
-- **public**: Contains the base HTML file and static assets.
-- **src**: Core React code, components, and Firebase configuration.
-- **firebase.js**: Holds Firebase initialization logic (Auth, Firestore).
+1. **Run** the application from IntelliJ (or via command line with your chosen build tool).
+2. **Test** the endpoints (e.g., using Postman or cURL):
+   - Create boards/lists/cards.
+   - Perform CRUD operations to manage tasks.
+3. **Integrate** a frontend or continue using CLI/API testing tools for interaction.
 
 ---
 
 ## Contributing
 
-1. **Fork** the repository.
+1. **Fork** this repository.
 2. **Create** a new branch for your feature or bug fix:
    ```bash
    git checkout -b feature/my-feature
@@ -146,6 +90,3 @@ Trello-Clone/
 
 - **Author**: [Rahul Pudurkar](https://github.com/rahulpudurkar)
 - **Repository**: [Trello-Clone](https://github.com/rahulpudurkar/Trello-Clone)
-
-Feel free to open an issue for questions or suggestions.
-```
