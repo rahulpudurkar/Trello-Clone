@@ -1,5 +1,5 @@
 
-# Trello Clone
+# Trello Clone (Backend)
 
 A **Java**-based Trello-like application providing backend services for creating boards, lists, and cards, with a **MongoDB** database for data persistence. Designed to be run from **IntelliJ** or any other Java IDE, this project offers essential Kanban functionality without a dedicated frontend.
 
